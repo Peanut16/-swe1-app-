@@ -44,6 +44,7 @@ jobs:
         run: coverage run --source=. manage.py test
 
       - name: Create coverage report
+        working-directory: djangotutorial
         run: coverage xml
 
       - name: Upload coverage to Coveralls
