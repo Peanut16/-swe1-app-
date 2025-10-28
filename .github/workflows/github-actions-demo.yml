@@ -41,6 +41,7 @@ jobs:
           pip install coverage django
 
       - name: Run tests with coverage
+        working-directory: djangotutorial
         run: coverage run --source=. manage.py test
 
       - name: Create coverage report
