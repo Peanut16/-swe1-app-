@@ -29,9 +29,15 @@ jobs:
           pip install -r requirements.txt || true
           pip install coverage django
 
+      - name: Debug - Listing root directory
+        run: ls -la
+
+      - name: Debug - Listing djangotutorial directory
+        run: ls -la djangotutorial/
+
       - name: Run tests with coverage
         working-directory: djangotutorial
-        run: coverage run --source=. ./manage.py test
+        run: coverage run --source=. manage.py test
 
       - name: Create coverage report
         working-directory: djangotutorial
