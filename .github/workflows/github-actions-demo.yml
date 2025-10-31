@@ -37,7 +37,7 @@ jobs:
 
       - name: Run tests with coverage
         working-directory: djangotutorial
-        run: coverage run djangotutorial/manage.py test
+        run: coverage run --source='.' djangotutorial/manage.py test
 
       - name: Create coverage report
         working-directory: djangotutorial

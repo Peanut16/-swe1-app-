@@ -22,7 +22,7 @@ jobs:
           pip install coverage coveralls django
 
       - name: Run tests with coverage
-        run: coverage run --source=. manage.py test
+        run: coverage run --source='.' manage.py test
 
       - name: Show coverage report
         run: coverage report -m
