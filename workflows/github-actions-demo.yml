@@ -23,23 +23,34 @@ jobs:
           python-version: "3.13"
 
       - name: Install Dependencies
+        working-directory: djangotutorial
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
       - name: Run Black Check
+        working-directory: djangotutorial
         run: |
           black --check .
+
       - name: Run Flake8
+        working-directory: djangotutorial
         run: |
           flake8 .
+
       - name: Run Tests with Coverage
+        working-directory: djangotutorial
         run: |
           python manage.py migrate
           coverage run --source='polls' manage.py test
+
       - name: Generate Coverage Report
+        working-directory: djangotutorial
         run: |
           coverage report
+
       - name: Coveralls
+        working-directory: djangotutorial
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
