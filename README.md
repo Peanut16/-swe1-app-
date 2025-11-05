@@ -1,1 +1,1 @@
-[![Coverage Status](https://coveralls.io/repos/github/Peanut16/-swe1-app-/badge.svg?branch=main)](https://coveralls.io/github/Peanut16/-swe1-app-?branch=main)
+[![CI Pipeline](https://github.com/Peanut16/-swe1-app-/actions/workflows/github-actions-demo.yml/badge.svg)](https://github.com/Peanut16/-swe1-app-/actions/workflows/github-actions-demo.yml)[![Coverage Status](https://coveralls.io/repos/github/Peanut16/-swe1-app-/badge.svg?branch=main)](https://coveralls.io/github/Peanut16/-swe1-app-?branch=main)
