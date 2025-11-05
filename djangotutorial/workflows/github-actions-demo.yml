@@ -22,33 +22,16 @@ jobs:
         with:
           python-version: "3.13"
 
-      - name: Install dependencies
-        working-directory: djangotutorial
+      - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt || true
-          pip install coverage django
-
-      - name: Debug - Listing root directory
-        run: ls -la
-
-      - name: Debug - Listing djangotutorial directory
-        run: ls -la djangotutorial/
-
-      - name: Run tests with coverage
-        working-directory: djangotutorial
-        run: coverage run --source='.' djangotutorial/manage.py test
-
-      - name: Create coverage report
-        working-directory: djangotutorial
-        run: coverage xml
-
-      - name: Upload coverage to Coveralls
-        uses: coverallsapp/github-action@v2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          file: djangotutorial/coverage.xml
-          format: python
+          pip install -r requirements.txt
+      - name: Run Black Check
+        run: |
+          black --check .
+      - name: Run Flake8
+        run: |
+          flake8 .
       - name: Run Tests with Coverage
         run: |
           python manage.py migrate
